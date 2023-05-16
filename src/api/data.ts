@@ -8,7 +8,10 @@ export interface Pieza {
 }
 import data from './data.json' assert { type: 'json' }
 
-export const TiposPieza = ['cajón', 'puerta', 'lateral', 'piso/techo']
+export const TIPO_MATERIALES = {
+  BLANCO_MDF: 'Blanco MDF',
+  NEGRO_MDF: 'Negro MDF'
+} as const
 
 export async function getPiezas(): Promise<Pieza[]> {
   return new Promise((resolve) => {

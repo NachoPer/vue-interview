@@ -1,7 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { Pieza } from 'src/api/data';
+import { toRaw } from 'vue';
+
+const props = defineProps<{piezas: Pieza[]}>()
+const piezas = toRaw(props.piezas)
+console.log({piezas})
+</script>
 <template>
   <tr>
-    <td>0</td>
     <td>puerta</td>
     <td>10</td>
     <td>20</td>

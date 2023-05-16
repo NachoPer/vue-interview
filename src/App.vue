@@ -1,16 +1,28 @@
 <script setup lang="ts">
+import { onMounted, reactive } from 'vue';
+
 import FilasPiezas from './components/FilasPiezas.vue'
-import { getPiezas } from './api/data'
+import { getPiezas, type Pieza, TIPO_MATERIALES } from './api/data'
+
+const state: {piezas: Pieza[] }= reactive({piezas: []})
+
+onMounted(async () => {
+  const piezasData = await getPiezas()
+  state.piezas = piezasData
+})
 </script>
 
 <template>
   <header>
     <h1 class="white">Piezas ML Plak</h1>
+    <select >
+      <option :value="TIPO_MATERIALES.BLANCO_MDF">{{ TIPO_MATERIALES.BLANCO_MDF }} </option>
+      <option :value="TIPO_MATERIALES.NEGRO_MDF">{{ TIPO_MATERIALES.NEGRO_MDF }} </option>
+    </select>
   </header>
   <main>
     <thead>
       <tr>
-        <th>ID</th>
         <th>Tipo</th>
         <th>Ancho</th>
         <th>Alto</th>
@@ -18,8 +30,8 @@ import { getPiezas } from './api/data'
         <th>Material</th>
       </tr>
     </thead>
-    <tbody>
-      <FilasPiezas></FilasPiezas>
+    <tbody v-if="state.piezas.length">
+      <FilasPiezas :piezas="state.piezas"></FilasPiezas>
     </tbody>
   </main>
 </template>
