@@ -1,0 +1,124 @@
+{
+  "piezas": [
+    {
+      "id": 1,
+      "tipo": "puerta",
+      "ancho": 80,
+      "largo": 200,
+      "alto": 4,
+      "material": "Blanco MDF"
+    },
+    {
+      "id": 2,
+      "tipo": "cajón",
+      "ancho": 60,
+      "largo": 80,
+      "alto": 40,
+      "material": "Negro MDF"
+    },
+    {
+      "id": 3,
+      "tipo": "piso/techo",
+      "ancho": 120,
+      "largo": 120,
+      "alto": 2,
+      "material": "Blanco MDF"
+    },
+    {
+      "id": 4,
+      "tipo": "laterales",
+      "ancho": 40,
+      "largo": 200,
+      "alto": 4,
+      "material": "Negro MDF"
+    },
+    {
+      "id": 5,
+      "tipo": "puerta",
+      "ancho": 70,
+      "largo": 180,
+      "alto": 3,
+      "material": "Blanco MDF"
+    },
+    {
+      "id": 6,
+      "tipo": "cajón",
+      "ancho": 50,
+      "largo": 70,
+      "alto": 30,
+      "material": "Negro MDF"
+    },
+    {
+      "id": 7,
+      "tipo": "piso/techo",
+      "ancho": 100,
+      "largo": 100,
+      "alto": 2,
+      "material": "Blanco MDF"
+    },
+    {
+      "id": 8,
+      "tipo": "laterales",
+      "ancho": 30,
+      "largo": 180,
+      "alto": 4,
+      "material": "Negro MDF"
+    },
+    {
+      "id": 9,
+      "tipo": "puerta",
+      "ancho": 90,
+      "largo": 220,
+      "alto": 5,
+      "material": "Blanco MDF"
+    },
+    {
+      "id": 10,
+      "tipo": "cajón",
+      "ancho": 40,
+      "largo": 60,
+      "alto": 20,
+      "material": "Negro MDF"
+    },
+    {
+      "id": 11,
+      "tipo": "piso/techo",
+      "ancho": 80,
+      "largo": 80,
+      "alto": 2,
+      "material": "Blanco MDF"
+    },
+    {
+      "id": 12,
+      "tipo": "laterales",
+      "ancho": 20,
+      "largo": 160,
+      "alto": 4,
+      "material": "Negro MDF"
+    },
+    {
+      "id": 13,
+      "tipo": "puerta",
+      "ancho": 100,
+      "largo": 200,
+      "alto": 4,
+      "material": "Blanco MDF"
+    },
+    {
+      "id": 14,
+      "tipo": "cajón",
+      "ancho": 30,
+      "largo": 50,
+      "alto": 10,
+      "material": "Negro MDF"
+    },
+    {
+      "id": 15,
+      "tipo": "piso/techo",
+      "ancho": 60,
+      "largo": 60,
+      "alto": 2,
+      "material": "Blanco MDF"
+    }
+  ]
+}
