@@ -15,24 +15,26 @@ onMounted(async () => {
 <template>
   <header>
     <h1 class="white">Piezas ML Plak</h1>
-    <select >
+    <!-- <select >
       <option :value="TIPO_MATERIALES.BLANCO_MDF">{{ TIPO_MATERIALES.BLANCO_MDF }} </option>
       <option :value="TIPO_MATERIALES.NEGRO_MDF">{{ TIPO_MATERIALES.NEGRO_MDF }} </option>
-    </select>
+    </select> -->
   </header>
   <main>
-    <thead>
-      <tr>
-        <th>Tipo</th>
-        <th>Ancho</th>
-        <th>Alto</th>
-        <th>Largo</th>
-        <th>Material</th>
-      </tr>
-    </thead>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Ancho</th>
+          <th>Alto</th>
+          <th>Largo</th>
+          <th>Material</th>
+        </tr>
+      </thead>
     <tbody v-if="state.piezas.length">
       <FilasPiezas :piezas="state.piezas"></FilasPiezas>
     </tbody>
+  </table>
   </main>
 </template>
 

@@ -27,7 +27,7 @@ tr:hover td {
   background-color: #020202;
   color: #f2f2f2;
 }
-.cajon-puerta:hover td {
+.cajon td {
   background-color: #ff5500;
 }
 </style>
