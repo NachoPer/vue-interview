@@ -3,7 +3,7 @@ import type { Pieza } from 'src/api/data';
 import { toRaw } from 'vue';
 const emit = defineEmits(['response'])
 const props = defineProps<{piezas: Pieza[]}>()
-const piezas = toRaw(props.piezas)
+const piezas = props.piezas
 console.log({piezas})
 
 interface m2Props {
