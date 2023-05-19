@@ -1,27 +1,55 @@
 <script setup lang="ts">
-import { onMounted, reactive } from 'vue';
+import { onMounted, reactive,toRaw,ref, type Ref, watch } from 'vue';
 
 import FilasPiezas from './components/FilasPiezas.vue'
 import { getPiezas, type Pieza, TIPO_MATERIALES } from './api/data'
 
 const state: {piezas: Pieza[] }= reactive({piezas: []})
+const loading:Ref<boolean>= ref(true)
+const totalm2: Ref<number> = ref(0) 
+const selected:Ref<string> = ref('')
 
 onMounted(async () => {
   const piezasData = await getPiezas()
-  state.piezas = piezasData
+  const filtered = filterType(piezasData)
+  loading.value = false
+  state.piezas = filtered
 })
+
+const filterType =  (piezas:Pieza[]) => {
+  const filtered = piezas.filter((el) => {
+    return el.tipo === 'cajón' || el.tipo === 'puerta'
+  })
+  return filtered;
+}
+
+const sortMaterial = (newValue:string,Value:string ) => {
+  state.piezas.sort((a) => {
+    return a.material === newValue ? -1 : 1
+  })
+  console.log(newValue,Value)
+  console.log(state.piezas)
+}
+
+watch(selected, (newValue:string,Value:string ) => {
+  state.piezas.sort((a) => {
+    return a.material === newValue ? -1 : 1
+  })
+}, {deep:true})
 </script>
 
 <template>
   <header>
     <h1 class="white">Piezas ML Plak</h1>
-    <!-- <select >
+    <select v-model="selected">
       <option :value="TIPO_MATERIALES.BLANCO_MDF">{{ TIPO_MATERIALES.BLANCO_MDF }} </option>
       <option :value="TIPO_MATERIALES.NEGRO_MDF">{{ TIPO_MATERIALES.NEGRO_MDF }} </option>
-    </select> -->
+    </select>
   </header>
   <main>
-    <table>
+    <h2>{{ totalm2 }}</h2>
+    <p v-if="loading">loading...</p>
+    <table v-else>
       <thead>
         <tr>
           <th>Tipo</th>
@@ -32,7 +60,7 @@ onMounted(async () => {
         </tr>
       </thead>
     <tbody v-if="state.piezas.length">
-      <FilasPiezas :piezas="state.piezas"></FilasPiezas>
+      <FilasPiezas :piezas="state.piezas" @response="(total)=> totalm2 = total "></FilasPiezas>
     </tbody>
   </table>
   </main>
