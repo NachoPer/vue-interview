@@ -23,17 +23,11 @@ const filterType =  (piezas:Pieza[]) => {
   return filtered;
 }
 
-const sortMaterial = (newValue:string,Value:string ) => {
+watch(selected, (newValue:string) => {
   state.piezas.sort((a) => {
     return a.material === newValue ? -1 : 1
   })
-}
-
-watch(selected, (newValue:string,Value:string ) => {
-  state.piezas.sort((a) => {
-    return a.material === newValue ? -1 : 1
-  })
-}, {deep:true})
+})
 </script>
 
 <template>
