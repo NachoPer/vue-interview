@@ -1,10 +1,8 @@
 <script setup lang="ts">
 import type { Pieza } from 'src/api/data';
-import { toRaw } from 'vue';
 const emit = defineEmits(['response'])
 const props = defineProps<{piezas: Pieza[]}>()
 const piezas = props.piezas
-console.log({piezas})
 
 interface m2Props {
   x:number;
@@ -14,7 +12,6 @@ interface m2Props {
 
 const m2 = (x:number,y:number,z:number) => {
   const total = x * y * z
-  console.log(total)
   emit('response', total)
   return total
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, reactive,toRaw,ref, type Ref, watch } from 'vue';
+import { onMounted, reactive,ref, type Ref, watch } from 'vue';
 
 import FilasPiezas from './components/FilasPiezas.vue'
 import { getPiezas, type Pieza, TIPO_MATERIALES } from './api/data'
@@ -27,8 +27,6 @@ const sortMaterial = (newValue:string,Value:string ) => {
   state.piezas.sort((a) => {
     return a.material === newValue ? -1 : 1
   })
-  console.log(newValue,Value)
-  console.log(state.piezas)
 }
 
 watch(selected, (newValue:string,Value:string ) => {
